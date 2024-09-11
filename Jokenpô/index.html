@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jokenpô</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>JokenPô</h1>
+      <div class="buttom">
+        <button class="rock" onclick="playHuman('rock')">&#x1f44A;</button>
+        <button class="paper" onclick="playHuman('paper')">&#x1f590;</button>
+        <button class="scissors" onclick="playHuman('scissors')">
+          &#x270c;
+        </button>
+        <br />
+        <br />
+        <p class="result"></p>
+      </div>
+      <p class="player1">
+        Pontuação Jogador: <span class="scoreHuman">0</span>
+      </p>
+      <p>Pontuação da Máquina: <span class="scoreMachine">0</span></p>
+      <p class="byCarlos">By Carlos - 2024</p>
+    </div>
+
+    <script>
+      const rock = document.querySelector(".rock");
+      const paper = document.querySelector(".paper");
+      const scissors = document.querySelector(".scissors");
+      const result = document.querySelector(".result");
+      const scoreHuman = document.querySelector('.scoreHuman')
+      const scoreMachine = document.querySelector('.scoreMachine')
+      let ponctuationHuman = 0
+      let ponctuationMachine = 0
+
+      const playHuman = (choiceHuman) => {
+        toPlayTheGame(choiceHuman, playMachine());
+      };
+
+      const playMachine = () => {
+        const choices = ["paper", "rock", "scissors"];
+        return choices[Math.floor(Math.random() * 3)];
+      };
+
+      const toPlayTheGame = (human, machine) => {
+        console.log(human, machine);
+        if (human == machine) {
+          result.innerHTML = "Empatou!";
+          result.style.color = 'gray'
+        } else if (
+          (human === "paper" && machine === "rock") ||
+          (human === "rock" && machine === "scissors") ||
+          (human === "scissors" && machine === "paper")
+        ) {
+          result.innerHTML = "Você ganhou!";
+          result.style.color = 'green'
+          ponctuationHuman++
+          scoreHuman.innerHTML = ponctuationHuman
+          
+        } else{ result.innerHTML = `Perdeu máquina: ${machine}`
+         ponctuationMachine++
+          scoreMachine.innerHTML = ponctuationMachine
+          result.style.color = 'red'
+        }
+      };
+     
+    </script>
+  </body>
+</html>

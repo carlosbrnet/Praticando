@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://picsum.photos/1600/900");
+}
+.container {
+  background-color: rgb(234, 233, 233);
+  padding: 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.211);
+  border: none;
+}
+.buttom {
+  margin: 10px 0;
+  text-align: center;
+  border: none;
+  
+}
+.rock, .paper, .scissors{
+  padding: 5px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.211);
+  font-size: 25px;
+  
+}
+.rock, .paper, .scissors:hover{
+  cursor: pointer;
+  
+  
+}
+.rock{
+  background-color: rgb(253, 0, 253);
+}
+.paper {
+  margin: 0 10px;
+  background-color: rgb(32, 194, 14);
+  
+}
+.scissors{
+  background-color: rgb(187, 255, 0);
+}
+h1 {
+  margin: 10px 0 20px 0;
+  text-align: center;
+  color: orangered;
+}
+.scoreHuman{
+  color: blue;
+  
+}
+.scoreMachine{
+  color: red;
+}
+.player1 {
+  margin: 5px 0;
+}
+
+.pontos {
+  color: blue;
+}
+.byCarlos{
+  font-size: 10px;
+  text-align: center;
+  margin-top: 30px;
+  color: gray;
+}

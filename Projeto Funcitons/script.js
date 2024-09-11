@@ -1,0 +1,1 @@
+toPlayTheGame(choiceHuman, playMachine());
